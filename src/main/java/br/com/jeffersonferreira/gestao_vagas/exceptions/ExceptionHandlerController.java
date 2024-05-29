@@ -1,4 +1,4 @@
-package br.com.jeffersonferreira.gestao_vagas.modules.candidate.exceptions;
+package br.com.jeffersonferreira.gestao_vagas.exceptions;
 
 import java.util.ArrayList;
 import java.util.List;
