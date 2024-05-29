@@ -8,6 +8,7 @@ public class GestaoVagasApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(GestaoVagasApplication.class, args);
+		System.out.println("\n  :) Projeto rodando...");
 	}
 
 }
