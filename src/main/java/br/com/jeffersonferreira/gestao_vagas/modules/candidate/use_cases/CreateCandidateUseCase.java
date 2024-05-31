@@ -1,4 +1,4 @@
-package br.com.jeffersonferreira.gestao_vagas.modules.candidate.useCases;
+package br.com.jeffersonferreira.gestao_vagas.modules.candidate.use_cases;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,8 +13,8 @@ public class CreateCandidateUseCase {
     @Autowired
     private CandidateRepository candidateRepository;
 
-    public CandidateEntity execute(CandidateEntity candidateEntity){
-       this.candidateRepository.findByUsernameOrEmail(candidateEntity.getUsername(), candidateEntity.getEmail())
+    public CandidateEntity execute(CandidateEntity candidateEntity) {
+        this.candidateRepository.findByUsernameOrEmail(candidateEntity.getUsername(), candidateEntity.getEmail())
                 .ifPresent((user) -> {
                     throw new UserFoundException();
                 });
