@@ -13,16 +13,21 @@ import jakarta.persistence.Id;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
-@Data
 @Entity(name = "company")
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class CompanyEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
-    private String name;
 
     @NotBlank
     @Pattern(regexp = "\\S+", message = "O campo [username] não deve conter espaço")
@@ -35,6 +40,7 @@ public class CompanyEntity {
     private String password;
 
     private String website;
+    private String name;
     private String description;
 
     @CreationTimestamp

@@ -18,14 +18,13 @@ import jakarta.persistence.ManyToOne;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 
-
-@Data
 @Entity(name = "job")
+@Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
 public class JobEntity {
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
@@ -35,7 +34,7 @@ public class JobEntity {
 
     @NotBlank(message = "Esse campo é obrigatório")
     private String level;
-    
+
     @ManyToOne()
     @JoinColumn(name = "company_id", insertable = false, updatable = false)
     private CompanyEntity companyEntity;

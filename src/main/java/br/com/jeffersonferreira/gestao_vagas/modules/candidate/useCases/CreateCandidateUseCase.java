@@ -1,4 +1,4 @@
-package br.com.jeffersonferreira.gestao_vagas.modules.candidate.use_cases;
+package br.com.jeffersonferreira.gestao_vagas.modules.candidate.useCases;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
