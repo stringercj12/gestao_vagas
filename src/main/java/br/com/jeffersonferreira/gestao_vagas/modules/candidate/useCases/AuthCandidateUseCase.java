@@ -44,6 +44,8 @@ public class AuthCandidateUseCase {
       throw new AuthenticationException();
     }
 
+    var roles = Arrays.asList("CANDIDATE");
+
     Algorithm algorithm = Algorithm.HMAC256(secretKey);
     var expiresIn = Instant.now().plus(Duration.ofMinutes(10));
     var token = JWT.create()
@@ -54,7 +56,7 @@ public class AuthCandidateUseCase {
         .sign(algorithm);
 
     var authCandidateResponseDTO = AuthCandidateResponseDTO.builder().access_token(token)
-        .expires_in(expiresIn.toEpochMilli()).build();
+        .expires_in(expiresIn.toEpochMilli()).roles(roles).build();
 
     return authCandidateResponseDTO;
   }
