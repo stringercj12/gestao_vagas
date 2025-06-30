@@ -40,6 +40,7 @@ public class ApplyJobCandidateUseCase {
         .jobId(idJob).build();
 
     applyJob = applyJobRepository.save(applyJob);
+
     return applyJob;
   }
 }
